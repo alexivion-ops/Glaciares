@@ -1,0 +1,9 @@
+.idea/
+.venv/
+__pycache__/
+app.py
+app2.py
+index1.html
+index2.html
+lista_difusion.txt
+mails_diputados.csv
