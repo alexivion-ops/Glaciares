@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Defendamos los Glaciares</title>
+  <style>
+    /* ... (Aquí va todo el CSS que definimos antes) ... */
+    :root { --bg: #ffffff; --text: #1a1a1a; --accent: #e63946; --dark: #0f172a; --maxw: 700px; }
+    body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.6; color: var(--text); }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    .hero-section { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000"); background-size: cover; padding: 80px 0; text-align: center; color: white; }
+    .main-button { display: inline-block; background: var(--accent); color: white; padding: 18px 32px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: transform 0.2s; box-shadow: 0 4px 15px rgba(230,57,70,0.3); }
+    .main-button:hover { transform: translateY(-2px); background: #c1121f; }
+    .info-section { padding: 60px 0; }
+    .action-box { background: var(--dark); padding: 40px; border-radius: 16px; color: white; text-align: center; }
+    /* Agregué una imagen de placeholder de Unsplash para que el Hero no se vea vacío si no subís la foto */
+  </style>
+</head>
+<body>
+  <header class="hero-section">
+    <div class="container">
+      <h1>¡NO A LA REFORMA DE LA LEY DE GLACIARES!</h1>
+      <p>Es la última instancia en Diputados. Tu mail puede hacer la diferencia.</p>
+      <a id="sendEmailBtnTop" class="main-button">Enviar mail a Diputados</a>
+    </div>
+  </header>
+
+  <main class="container info-section">
+    <h3>¿Por qué actuar ahora?</h3>
+    <p>Los glaciares son nuestras reservas de agua. La reforma busca reducir su área de protección, permitiendo actividades extractivas en zonas sensibles.</p>
+    <div class="action-box">
+      <h3>Acción inmediata</h3>
+      <p>Hacé clic abajo para abrir tu correo con un mensaje pre-redactado.</p>
+      <a id="sendEmailBtnBottom" class="main-button">Redactar Mensaje Urgente</a>
+    </div>
+  </main>
+
+  <script>
+    const MAILS = ["diputado1@hcdn.gob.ar", "diputado2@hcdn.gob.ar"]; // AGREGA ACÁ TU LISTA
+    const SUBJECT = "URGENTE: Protección de Glaciares";
+    const BODY = "Estimados Diputados/as: Les solicito que rechacen la reforma de la Ley 26.639...";
+
+    function setupLinks() {
+      const mailtoUrl = `mailto:?bcc=${MAILS.join(',')}&subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(BODY)}`;
+      document.getElementById("sendEmailBtnTop").href = mailtoUrl;
+      document.getElementById("sendEmailBtnBottom").href = mailtoUrl;
+    }
+    setupLinks();
+  </script>
+</body>
+</html>
