@@ -144,10 +144,10 @@
     }
 
     .text-box--hero {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(14px);
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(16px);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .text-box--hero .step-label,
@@ -157,9 +157,10 @@
     .text-box--hero .summary-list strong { color: #fff; }
 
     .text-box--light {
-      background: rgba(255, 255, 255, 0.98);
+      background: #ffffff;
       color: var(--text);
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 56px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.04);
     }
 
     .text-box--light .step-label { color: var(--text-light); }
@@ -173,10 +174,11 @@
     .text-box--light .faq-item dd { color: var(--text-light); }
 
     .text-box--dark {
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(12px);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 20px 56px rgba(0, 0, 0, 0.35);
     }
 
     .text-box--dark .step-label,
@@ -457,6 +459,7 @@
 
   <section class="screen screen--hero" id="hero">
     <div class="container">
+      <div class="text-box text-box--hero">
       <div class="hero-content reveal-on-scroll" id="heroContent">
         <p class="step-label">1 / 6 · Inicio</p>
         <div class="hero-kicker">Ahora en Diputados</div>
@@ -481,11 +484,13 @@
           <span class="scroll-hint__icon" aria-hidden="true">↓</span>
         </button>
       </div>
+      </div>
     </div>
   </section>
 
   <section class="screen screen--ice" id="momento">
     <div class="container">
+      <div class="text-box text-box--light">
       <div class="section-content reveal-on-scroll">
         <p class="step-label">2 / 6 · Momento clave</p>
         <h2>El momento es ahora</h2>
@@ -500,11 +505,13 @@
           <p class="cta-note cta-note--time">Tu mensaje lleva menos de 30 segundos.</p>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
   <section class="screen screen--light" id="en-juego">
     <div class="container">
+      <div class="text-box text-box--light">
       <div class="section-content reveal-on-scroll">
         <p class="step-label">3 / 6 · Qué está en juego</p>
         <h2>Defendemos agua, no solo hielo</h2>
@@ -519,11 +526,13 @@
           <p class="cta-note">Se abre tu correo con un texto sugerido que podés editar para cada grupo.</p>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
   <section class="screen screen--ice" id="tu-voz">
     <div class="container">
+      <div class="text-box text-box--light">
       <div class="section-content reveal-on-scroll">
         <p class="step-label">4 / 6 · Tu voz</p>
         <h2>Tu mail cuenta</h2>
@@ -537,11 +546,13 @@
           <p class="cta-note">No se guardan tus datos en esta página, el mail sale desde tu propia cuenta.</p>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
   <section class="screen screen--dark" id="ultima">
     <div class="container">
+      <div class="text-box text-box--dark">
       <div class="section-content reveal-on-scroll">
         <p class="step-label">5 / 6 · Último paso</p>
         <h2>Última llamada por los glaciares</h2>
@@ -556,11 +567,13 @@
           <p class="cta-note cta-note--time">Un minuto de tu tiempo puede hacer la diferencia.</p>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
   <section class="screen screen--light" id="contexto-faq">
     <div class="container">
+      <div class="text-box text-box--light">
       <div class="section-content reveal-on-scroll">
         <p class="step-label">6 / 6 · Contexto</p>
         <h2>¿Quién impulsa esta acción?</h2>
@@ -591,6 +604,7 @@
           <p class="cta-note">Usamos tu aplicación de correo, no una plataforma externa.</p>
           <p class="cta-note cta-note--time">Podés hacerlo ahora mismo en menos de 30 segundos.</p>
         </div>
+      </div>
       </div>
     </div>
   </section>
