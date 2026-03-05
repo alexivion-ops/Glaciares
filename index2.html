@@ -1,215 +1,576 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NO a la reforma de la Ley de Glaciares</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Protejamos nuestros Glaciares | Ahora se vota en Diputados</title>
+  <meta name="description" content="La reforma de la Ley de Glaciares ya tuvo media sanción en el Senado y ahora se vota en Diputados. Enviá un mail en menos de 30 segundos para pedir que se rechace.">
+
+  <!-- Metadatos sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Protejamos nuestros glaciares: ahora se define en Diputados">
+  <meta property="og:description" content="Sumate enviando un mail a Diputados en menos de 30 segundos para pedir que se rechace la reforma de la Ley de Glaciares.">
+  <meta property="og:image" content="glaciar.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Protejamos nuestros glaciares: ahora se define en Diputados">
+  <meta name="twitter:description" content="Enviá un mail a Diputados en menos de 30 segundos para defender la Ley de Glaciares.">
+  <meta name="twitter:image" content="glaciar.jpg">
 
   <style>
-    :root{
-      --text:#0b1220;
-      --muted:#475569;
-      --white:#ffffff;
-      --accent:#16a34a;
-      --accent2:#22c55e;
-      --max: 820px;
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-light: #4a4a4a;
+      --accent: #e63946;
+      --accent-hover: #c1121f;
+      --dark: #0f172a;
+      --ice: #f1f5f9;
+      --maxw: 700px;
+      --pad-x: 24px;
     }
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background: #ffffff;
-      line-height: 1.65;
+      line-height: 1.6;
+      scroll-snap-type: y proximity;
     }
 
-    /* hero simple 2016 */
-    .hero{
-      min-height: 78vh;
-      position: relative;
-      display:flex;
-      align-items:flex-end;
-      background:#0b1220;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:0;
-      background-image: url("HERO_IMAGE.jpg"); /* <-- cambiá esto */
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.02);
-      filter: saturate(1.05) contrast(1.02);
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(to bottom, rgba(11,18,32,.30), rgba(11,18,32,.88) 70%, rgba(11,18,32,.95));
-    }
-
-    .container{
-      position:relative;
-      width:100%;
-      max-width: var(--max);
+    .container {
+      max-width: var(--maxw);
       margin: 0 auto;
-      padding: 34px calc(18px + env(safe-area-inset-left)) 26px calc(18px + env(safe-area-inset-right));
-    }
-    @media (max-width: 420px){
-      .container{
-        padding: 28px calc(22px + env(safe-area-inset-left)) 24px calc(22px + env(safe-area-inset-right));
-      }
+      padding-left: calc(var(--pad-x) + env(safe-area-inset-left));
+      padding-right: calc(var(--pad-x) + env(safe-area-inset-right));
     }
 
-    .kicker{
-      display:inline-block;
-      color: rgba(255,255,255,.9);
-      font-weight: 800;
-      font-size: 13px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.08);
-      text-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
+    @media (max-width: 420px) { :root { --pad-x: 28px; } }
 
-    h1{
-      margin: 12px 0 10px;
-      color: var(--white);
-      font-size: clamp(30px, 4.6vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      text-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-
-    .subtitle{
-      margin: 0 0 18px;
-      color: rgba(255,255,255,.92);
-      font-size: 16px;
-      max-width: 60ch;
-      text-shadow: 0 10px 28px rgba(0,0,0,.32);
-    }
-
-    .btn{
-      display:inline-block;
-      padding: 14px 18px;
-      border-radius: 14px;
-      font-weight: 900;
-      text-decoration: none;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: white;
-      box-shadow: 0 14px 30px rgba(34,197,94,.22);
-    }
-
-    .hint{
-      margin-top: 10px;
-      color: rgba(255,255,255,.82);
-      font-size: 12px;
-      max-width: 70ch;
-    }
-
-    main{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 26px calc(18px + env(safe-area-inset-left)) 44px calc(18px + env(safe-area-inset-right));
-    }
-    @media (max-width: 420px){
-      main{
-        padding: 26px calc(22px + env(safe-area-inset-left)) 44px calc(22px + env(safe-area-inset-right));
-      }
-    }
-
-    p{
-      margin: 0 0 14px;
-      font-size: 16px;
-      color: #0f172a;
-    }
-    b{font-weight: 900}
-
-    .divider{
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
       height: 1px;
-      background: rgba(15,23,42,.12);
-      margin: 20px 0;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
-    .final{
-      text-align:center;
-      padding-top: 6px;
+    /* ========== SECCIONES TIPO PANTALLA ========== */
+    .screen {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 0 80px;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
     }
-    .final p{
-      margin: 0 auto 14px;
-      max-width: 62ch;
-      color: #334155;
+
+    .screen--hero {
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url("glaciar.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .screen--dark {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+
+    .screen--light { background: var(--bg); }
+    .screen--ice  { background: var(--ice); }
+
+    .hero-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 4px 12px;
+      background: var(--accent);
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .step-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 8px;
+    }
+
+    .screen--light .step-label,
+    .screen--ice .step-label {
+      color: var(--text-light);
+    }
+
+    .screen h1,
+    .screen h2 {
+      margin: 0 0 16px;
+      font-size: clamp(26px, 6vw, 38px);
+      line-height: 1.15;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .screen--hero h1 { color: white; }
+    .screen--dark h2 { color: white; }
+
+    .screen .subtitle {
+      margin: 0 auto 24px;
+      font-size: clamp(15px, 3.5vw, 18px);
+      font-weight: 400;
+      max-width: 560px;
+      line-height: 1.45;
+    }
+
+    .screen--hero .subtitle { color: rgba(255,255,255,0.92); }
+    .screen--dark .subtitle { color: rgba(255,255,255,0.85); }
+    .screen--light .subtitle,
+    .screen--ice .subtitle { color: var(--text-light); }
+
+    .summary-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 560px;
+      text-align: left;
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .summary-list li {
+      margin-bottom: 6px;
+    }
+
+    .summary-list strong {
+      font-weight: 700;
+    }
+
+    /* Botón principal (reutilizado en todas las secciones) */
+    .cta-wrap { margin-top: 24px; }
+
+    .main-button {
+      display: inline-block;
+      border: 0;
+      cursor: pointer;
+      padding: 16px 28px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(230, 57, 70, 0.35);
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .main-button:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(230, 57, 70, 0.45);
+    }
+
+    .main-button:active { transform: translateY(0); }
+
+    .main-button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .screen--hero .main-button:focus-visible,
+    .screen--dark .main-button:focus-visible {
+      outline-color: #ffffff;
+    }
+
+    .screen--dark .main-button {
+      background: #fff;
+      color: var(--dark);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .screen--dark .main-button:hover {
+      background: var(--ice);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .cta-note {
+      margin-top: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .cta-note--time {
+      font-weight: 600;
+    }
+
+    .screen--light .cta-note,
+    .screen--ice .cta-note {
+      color: var(--text-light);
+    }
+
+    .mini-divider {
+      height: 4px;
+      width: 40px;
+      background: var(--accent);
+      margin: 24px 0;
+      border-radius: 2px;
+    }
+
+    .screen--dark .mini-divider {
+      background: rgba(255,255,255,0.5);
+      margin: 24px auto;
+    }
+
+    .screen p {
+      margin: 0 0 16px;
+      font-size: 17px;
+      color: var(--text-light);
+    }
+
+    .screen--dark p { color: rgba(255,255,255,0.85); }
+
+    .bold-text { color: var(--text); font-weight: 700; }
+    .screen--dark .bold-text { color: white; }
+
+    .highlight-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      margin-top: 8px;
+    }
+
+    .scroll-hint {
+      margin-top: 32px;
+      border: 0;
+      background: none;
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .scroll-hint__icon {
+      font-size: 18px;
+      line-height: 1;
+      animation: bounce 1.4s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+
+    .faq {
+      margin-top: 16px;
+      text-align: left;
+    }
+
+    .faq-title {
+      font-size: 18px;
+      margin: 8px 0 12px;
+      color: var(--dark);
+    }
+
+    .faq-list {
+      margin: 0;
+      padding: 0;
+    }
+
+    .faq-item {
+      margin-bottom: 12px;
+    }
+
+    .faq-item dt {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .faq-item dd {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    /* Barra fija: CTA siempre visible al hacer scroll */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px var(--pad-x);
+      padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+
+    .sticky-cta.is-visible { transform: translateY(0); }
+
+    .sticky-cta .main-button {
+      max-width: 100%;
+      padding: 14px 24px;
+    }
+
+    /* Footer compacto */
+    .footer-section {
+      background: var(--dark);
+      padding: 32px 0;
+      padding-bottom: calc(32px + env(safe-area-inset-bottom));
+      text-align: center;
+      color: rgba(255,255,255,0.7);
       font-size: 14px;
     }
 
-    footer{
-      padding: 20px 16px 30px;
-      color: #64748b;
-      font-size: 12px;
-      text-align:center;
+    .footer-section a { color: rgba(255,255,255,0.9); }
+
+    .ig-link {
+      margin-top: 16px;
+      display: inline-flex;
+      padding: 10px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+
+    .ig-link:hover { transform: scale(1.1); }
+
+    .ig-link svg { width: 24px; height: 24px; fill: white; }
+
+    @media (max-width: 480px) {
+      .screen { padding: 50px 0 70px; }
+      .screen--hero { padding: 60px 0 50px; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- SECCIÓN 1: Hero -->
+  <section class="screen screen--hero" id="hero">
     <div class="container">
-      <span class="kicker">Última oportunidad: ahora define Diputados</span>
+      <p class="step-label">1 / 6 · Inicio</p>
+      <div class="hero-kicker">Ahora en Diputados</div>
+      <h1>La reforma de la Ley de Glaciares se vota en Diputados</h1>
+      <p class="subtitle">La reforma ya tuvo media sanción en el Senado. Diputados es la última barrera para evitar que se debilite la protección de nuestros glaciares.</p>
 
-      <h1>¡NO a la reforma que debilita la Ley de Glaciares!</h1>
+      <p class="visually-hidden">Imagen de glaciares de montaña al fondo, representando reservas de agua dulce amenazadas por la reforma.</p>
 
-      <p class="subtitle">
-        El Senado ya avanzó. Si Diputados lo aprueba, se abre la puerta a un retroceso ambiental.
-        <b>Mandá este mail ahora</b> para pedir que la frenen.
-      </p>
+      <ul class="summary-list">
+        <li><strong>Qué pasa:</strong> se discute una reforma que recorta la protección de la Ley de Glaciares.</li>
+        <li><strong>Por qué importa:</strong> los glaciares y el ambiente periglacial son reservas claves de agua dulce.</li>
+        <li><strong>Qué podés hacer:</strong> enviar un mail ahora a Diputados para pedir que se rechace la reforma.</li>
+      </ul>
 
-      <!-- ✅ MAILTO (HTML puro) -->
-      <a class="btn"
-         href='mailto:DESTINATARIOS@hcdn.gob.ar?subject=Rechacen%20la%20reforma%20de%20la%20Ley%20de%20Glaciares%20(Ley%2026.639)&body=Sra./Sr.%20Diputada/o%20Nacional%3A%0D%0A%0D%0ALe%20escribo%20para%20solicitarle%20que%20rechace%20la%20reforma%20de%20la%20Ley%2026.639%20(Glaciares%20y%20Ambiente%20Periglacial).%20Proteger%20glaciares%20y%20ambiente%20periglacial%20es%20proteger%20el%20agua%2C%20las%20cuencas%20y%20a%20nuestras%20comunidades.%0D%0A%0D%0AAgradecer%C3%ADa%20conocer%20su%20postura%20p%C3%BAblica%20sobre%20este%20tema.%0D%0A%0D%0AAtentamente%2C%0D%0A%5BNombre%20y%20Apellido%5D%0D%0A%5BProvincia%5D'>
-        Enviar mail a Diputados
-      </a>
+      <div class="cta-wrap">
+        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <p class="cta-note">Se abre tu correo, no guardamos tus datos.</p>
+        <p class="cta-note cta-note--time">Tardás menos de 30 segundos.</p>
+      </div>
 
-      <div class="hint">
-        Se abrirá tu correo (Gmail/Outlook/etc.) con el mensaje listo. Solo tocás “Enviar”.
+      <button class="scroll-hint" id="scrollDownBtn" type="button">
+        <span>Seguí leyendo</span>
+        <span class="scroll-hint__icon" aria-hidden="true">↓</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: El momento -->
+  <section class="screen screen--ice" id="momento">
+    <div class="container">
+      <p class="step-label">2 / 6 · Momento clave</p>
+      <h2>El momento es ahora</h2>
+      <p class="subtitle">La Ley 26.639 de Protección de Glaciares ya fue modificada en el Senado. La Cámara de Diputados decide si esa reforma se convierte o no en ley.</p>
+      <div class="mini-divider"></div>
+      <p>Un solo voto en Diputados puede cambiar el resultado. Cada mail directo a sus casillas oficiales ayuda a poner un límite.</p>
+      <div class="cta-wrap">
+        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <p class="cta-note cta-note--time">Tu mensaje lleva menos de 30 segundos.</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTENIDO -->
-  <main>
-    <p>
-      La <b>Ley 26.639</b> protege glaciares y ambiente periglacial, esenciales para el agua de muchas cuencas del país.
-      Esta reforma <b>reduce la protección</b> y prioriza un modelo extractivo que puede generar impactos irreversibles.
-    </p>
+  <!-- SECCIÓN 3: Qué está en juego -->
+  <section class="screen screen--light" id="en-juego">
+    <div class="container">
+      <p class="step-label">3 / 6 · Qué está en juego</p>
+      <h2>Defendemos agua, no solo hielo</h2>
+      <p>Los glaciares no son solo paisaje: son <strong class="bold-text">reservas estratégicas de agua dulce</strong>. Si se debilita la ley, se habilitan actividades que pueden afectar las cuencas que abastecen a nuestras comunidades.</p>
+      <div class="mini-divider"></div>
+      <p>El <strong class="bold-text">ambiente periglacial</strong> —suelos congelados y humedales de alta montaña— también queda más expuesto. Un correo puede parecer poco, pero <strong class="bold-text">miles de mensajes coordinados son una señal política clara</strong>.</p>
+      <div class="cta-wrap">
+        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <p class="cta-note">Se abre tu correo con un texto sugerido que podés editar.</p>
+      </div>
+    </div>
+  </section>
 
-    <p>
-      En un contexto de crisis climática, defender glaciares es defender <b>agua</b>, <b>ecosistemas</b> y <b>comunidades</b>.
-      Hoy la decisión está en Diputados: es el momento de exigir una postura clara.
-    </p>
+  <!-- SECCIÓN 4: Tu voz -->
+  <section class="screen screen--ice" id="tu-voz">
+    <div class="container">
+      <p class="step-label">4 / 6 · Tu voz</p>
+      <h2>Tu mail cuenta</h2>
+      <p class="subtitle">Se abre tu aplicación de correo con el asunto y el cuerpo del mensaje ya escritos. Podés enviarlo tal como está o ajustarlo con tus palabras.</p>
+      <span class="highlight-badge">Tardás menos de 30 segundos</span>
+      <div class="cta-wrap">
+        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <p class="cta-note">No se guardan tus datos en esta página, el mail sale desde tu propia cuenta.</p>
+      </div>
+    </div>
+  </section>
 
-    <p>
-      <b>Pedimos algo simple:</b> que rechacen la reforma y sostengan los presupuestos mínimos ambientales.
-    </p>
+  <!-- SECCIÓN 5: Última llamada (oscura) -->
+  <section class="screen screen--dark" id="ultima">
+    <div class="container">
+      <p class="step-label">5 / 6 · Último paso</p>
+      <h2>Última llamada por los glaciares</h2>
+      <p class="subtitle">Si Diputados convierte esta reforma en ley, la protección de los glaciares y del ambiente periglacial se verá seriamente debilitada.</p>
+      <div class="mini-divider"></div>
+      <p>Enviá tu mail ahora. Cada mensaje cuenta y puede ayudar a frenar un retroceso en la defensa de nuestros territorios.</p>
+      <div class="cta-wrap">
+        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <p class="cta-note cta-note--time">Un minuto de tu tiempo puede hacer la diferencia.</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="divider"></div>
+  <!-- SECCIÓN 6: Contexto y FAQ -->
+  <section class="screen screen--light" id="contexto-faq">
+    <div class="container">
+      <p class="step-label">6 / 6 · Contexto</p>
+      <h2>¿Quién impulsa esta acción?</h2>
+      <p class="subtitle">Esta campaña es impulsada por <strong class="bold-text">Jóvenes por el Clima</strong>, junto a personas y organizaciones que defienden la justicia climática y el derecho al agua.</p>
 
-    <div class="final">
-      <p><b>¿Listo para mandar el mail?</b><br>Tu acción es rápida y suma presión pública.</p>
+      <div class="mini-divider"></div>
 
-      <!-- ✅ MISMO MAILTO ABAJO -->
-      <a class="btn"
-         href='mailto:DESTINATARIOS@hcdn.gob.ar?subject=Rechacen%20la%20reforma%20de%20la%20Ley%20de%20Glaciares%20(Ley%2026.639)&body=Sra./Sr.%20Diputada/o%20Nacional%3A%0D%0A%0D%0ALe%20escribo%20para%20solicitarle%20que%20rechace%20la%20reforma%20de%20la%20Ley%2026.639%20(Glaciares%20y%20Ambiente%20Periglacial).%20Proteger%20glaciares%20y%20ambiente%20periglacial%20es%20proteger%20el%20agua%2C%20las%20cuencas%20y%20a%20nuestras%20comunidades.%0D%0A%0D%0AAgradecer%C3%ADa%20conocer%20su%20postura%20p%C3%BAblica%20sobre%20este%20tema.%0D%0A%0D%0AAtentamente%2C%0D%0A%5BNombre%20y%20Apellido%5D%0D%0A%5BProvincia%5D'>
-        Enviar mail ahora
+      <div class="faq">
+        <h3 class="faq-title">Preguntas rápidas</h3>
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt>¿Qué pasa si se aprueba la reforma?</dt>
+            <dd>Se debilita la protección de los glaciares y del ambiente periglacial, abriendo la puerta a actividades que pueden afectar fuentes de agua en varias provincias.</dd>
+          </div>
+          <div class="faq-item">
+            <dt>¿Mi mail sirve de algo?</dt>
+            <dd>Sí. Cuando muchos mensajes llegan a sus casillas oficiales, Diputados recibe una señal clara de que hay ciudadanía atenta y organizada.</dd>
+          </div>
+          <div class="faq-item">
+            <dt>¿De dónde salen los correos de Diputados?</dt>
+            <dd>De los canales y listas de contacto públicas de la Honorable Cámara de Diputados de la Nación (HCDN).</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="cta-wrap">
+        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <p class="cta-note">Usamos tu aplicación de correo, no una plataforma externa.</p>
+        <p class="cta-note cta-note--time">Podés hacerlo ahora mismo en menos de 30 segundos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barra fija (aparece al hacer scroll) -->
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <div class="container">
+      <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+    </div>
+  </div>
+
+  <footer class="footer-section">
+    <div class="container">
+      <p>© 2026 Campaña impulsada por <strong>Jóvenes por el Clima</strong></p>
+      <a class="ig-link" href="https://www.instagram.com/jovenesporelclimarg/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg>
       </a>
     </div>
-  </main>
-
-  <footer>
-    © 2026 — Campaña impulsada por Jóvenes por el Clima
   </footer>
 
+  <script>
+  const BCC_LIST = "diputado1@hcdn.gob.ar, diputado2@hcdn.gob.ar, diputado3@hcdn.gob.ar";
+  const SUBJECT = "URGENTE: En Diputados se define la Ley de Glaciares — pedimos rechazo";
+  const BODY = `Estimados/as Diputados/as:
+
+Les escribo con urgencia porque la reforma a la Ley de Glaciares ya tuvo media sanción en el Senado y ahora se define en la Cámara de Diputados.
+
+Les solicito que RECHACEN cualquier modificación que reduzca la protección de los glaciares y del ambiente periglacial establecida por la Ley 26.639.
+
+Atentamente,
+[Tu nombre y apellido]
+[Localidad]`;
+
+  function openMail(e) {
+    if (e) e.preventDefault();
+    const cleanBcc = BCC_LIST.replace(/\s+/g, '');
+    const params = [
+      `bcc=${encodeURIComponent(cleanBcc)}`,
+      `subject=${encodeURIComponent(SUBJECT)}`,
+      `body=${encodeURIComponent(BODY)}`
+    ].join('&');
+    const mailtoUrl = `mailto:?${params}`;
+    if (mailtoUrl.length > 2000) console.warn("Lista de mails muy larga. Algunos clientes podrían fallar.");
+    const a = document.createElement('a');
+    a.href = mailtoUrl;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    setTimeout(() => { a.click(); document.body.removeChild(a); }, 100);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".js-send-mail").forEach(btn => btn.onclick = openMail);
+
+    const sticky = document.getElementById("stickyCta");
+    const hero = document.getElementById("hero");
+    if (sticky && hero) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          const showSticky = !entry.isIntersecting;
+          sticky.classList.toggle("is-visible", showSticky);
+          sticky.setAttribute("aria-hidden", showSticky ? "false" : "true");
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(hero);
+    }
+
+    const scrollDownBtn = document.getElementById("scrollDownBtn");
+    const nextSection = document.getElementById("momento");
+    if (scrollDownBtn && nextSection) {
+      scrollDownBtn.addEventListener("click", () => {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  });
+  </script>
 </body>
 </html>
