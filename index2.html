@@ -166,8 +166,15 @@
       font-weight: 700;
     }
 
-    /* Botón principal (reutilizado en todas las secciones) */
+    /* Botones principales (reutilizados en todas las secciones) */
     .cta-wrap { margin-top: 24px; }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: stretch;
+    }
 
     .main-button {
       display: inline-block;
@@ -213,6 +220,24 @@
     .screen--dark .main-button:hover {
       background: var(--ice);
       box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .main-button--outline {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: none;
+    }
+
+    .screen--light .main-button--outline,
+    .screen--ice .main-button--outline {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .main-button--outline:hover {
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .cta-note {
@@ -373,6 +398,12 @@
       .screen { padding: 50px 0 70px; }
       .screen--hero { padding: 60px 0 50px; }
     }
+
+    @media (min-width: 640px) {
+      .cta-buttons {
+        flex-direction: row;
+      }
+    }
   </style>
 </head>
 <body>
@@ -394,9 +425,26 @@
       </ul>
 
       <div class="cta-wrap">
-        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
-        <p class="cta-note">Se abre tu correo, no guardamos tus datos.</p>
-        <p class="cta-note cta-note--time">Tardás menos de 30 segundos.</p>
+        <div class="cta-buttons">
+          <button
+            class="main-button js-send-mail"
+            type="button"
+            data-mail-target="favor"
+            aria-label="Enviar mail a Diputados que ya anunciaron su apoyo a la reforma de glaciares"
+          >
+            Enviar mail a quienes votan a favor
+          </button>
+          <button
+            class="main-button main-button--outline js-send-mail"
+            type="button"
+            data-mail-target="duda"
+            aria-label="Enviar mail a Diputados indecisos sobre la reforma de glaciares"
+          >
+            Enviar mail a quienes están en duda
+          </button>
+        </div>
+        <p class="cta-note">Elegí a quién escribirle: a quienes ya anunciaron que votarán a favor y/o a quienes todavía están en duda.</p>
+        <p class="cta-note cta-note--time">Se abre tu correo, no guardamos tus datos. Tardás menos de 30 segundos.</p>
       </div>
 
       <button class="scroll-hint" id="scrollDownBtn" type="button">
@@ -415,7 +463,24 @@
       <div class="mini-divider"></div>
       <p>Un solo voto en Diputados puede cambiar el resultado. Cada mail directo a sus casillas oficiales ayuda a poner un límite.</p>
       <div class="cta-wrap">
-        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <div class="cta-buttons">
+          <button
+            class="main-button js-send-mail"
+            type="button"
+            data-mail-target="favor"
+            aria-label="Enviar mail a Diputados que apoyan la reforma para exigir que cambien su voto"
+          >
+            Escribir a quienes votan a favor
+          </button>
+          <button
+            class="main-button main-button--outline js-send-mail"
+            type="button"
+            data-mail-target="duda"
+            aria-label="Enviar mail a Diputados indecisos para pedir que rechacen la reforma"
+          >
+            Escribir a quienes están en duda
+          </button>
+        </div>
         <p class="cta-note cta-note--time">Tu mensaje lleva menos de 30 segundos.</p>
       </div>
     </div>
@@ -430,8 +495,25 @@
       <div class="mini-divider"></div>
       <p>El <strong class="bold-text">ambiente periglacial</strong> —suelos congelados y humedales de alta montaña— también queda más expuesto. Un correo puede parecer poco, pero <strong class="bold-text">miles de mensajes coordinados son una señal política clara</strong>.</p>
       <div class="cta-wrap">
-        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
-        <p class="cta-note">Se abre tu correo con un texto sugerido que podés editar.</p>
+        <div class="cta-buttons">
+          <button
+            class="main-button js-send-mail"
+            type="button"
+            data-mail-target="favor"
+            aria-label="Enviar mail a Diputados que apoyan la reforma explicando el daño a los glaciares"
+          >
+            Mail a quienes votan a favor
+          </button>
+          <button
+            class="main-button main-button--outline js-send-mail"
+            type="button"
+            data-mail-target="duda"
+            aria-label="Enviar mail a Diputados indecisos reforzando los argumentos para rechazar la reforma"
+          >
+            Mail a quienes están en duda
+          </button>
+        </div>
+        <p class="cta-note">Se abre tu correo con un texto sugerido que podés editar para cada grupo.</p>
       </div>
     </div>
   </section>
@@ -444,7 +526,24 @@
       <p class="subtitle">Se abre tu aplicación de correo con el asunto y el cuerpo del mensaje ya escritos. Podés enviarlo tal como está o ajustarlo con tus palabras.</p>
       <span class="highlight-badge">Tardás menos de 30 segundos</span>
       <div class="cta-wrap">
-        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <div class="cta-buttons">
+          <button
+            class="main-button js-send-mail"
+            type="button"
+            data-mail-target="favor"
+            aria-label="Enviar mail a Diputados que ya se pronunciaron a favor de la reforma"
+          >
+            Escribir a quienes votan a favor
+          </button>
+          <button
+            class="main-button main-button--outline js-send-mail"
+            type="button"
+            data-mail-target="duda"
+            aria-label="Enviar mail a Diputados que aún están indecisos"
+          >
+            Escribir a quienes están en duda
+          </button>
+        </div>
         <p class="cta-note">No se guardan tus datos en esta página, el mail sale desde tu propia cuenta.</p>
       </div>
     </div>
@@ -459,7 +558,24 @@
       <div class="mini-divider"></div>
       <p>Enviá tu mail ahora. Cada mensaje cuenta y puede ayudar a frenar un retroceso en la defensa de nuestros territorios.</p>
       <div class="cta-wrap">
-        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <div class="cta-buttons">
+          <button
+            class="main-button js-send-mail"
+            type="button"
+            data-mail-target="favor"
+            aria-label="Enviar mail urgente a Diputados que apoyan la reforma para que cambien su voto"
+          >
+            Mail urgente a quienes votan a favor
+          </button>
+          <button
+            class="main-button main-button--outline js-send-mail"
+            type="button"
+            data-mail-target="duda"
+            aria-label="Enviar mail urgente a Diputados indecisos para que rechacen la reforma"
+          >
+            Mail urgente a quienes están en duda
+          </button>
+        </div>
         <p class="cta-note cta-note--time">Un minuto de tu tiempo puede hacer la diferencia.</p>
       </div>
     </div>
@@ -493,7 +609,24 @@
       </div>
 
       <div class="cta-wrap">
-        <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+        <div class="cta-buttons">
+          <button
+            class="main-button js-send-mail"
+            type="button"
+            data-mail-target="favor"
+            aria-label="Enviar mail a Diputados que apoyan la reforma de glaciares"
+          >
+            Escribir a quienes votan a favor
+          </button>
+          <button
+            class="main-button main-button--outline js-send-mail"
+            type="button"
+            data-mail-target="duda"
+            aria-label="Enviar mail a Diputados indecisos sobre la reforma de glaciares"
+          >
+            Escribir a quienes están en duda
+          </button>
+        </div>
         <p class="cta-note">Usamos tu aplicación de correo, no una plataforma externa.</p>
         <p class="cta-note cta-note--time">Podés hacerlo ahora mismo en menos de 30 segundos.</p>
       </div>
@@ -503,7 +636,24 @@
   <!-- Barra fija (aparece al hacer scroll) -->
   <div class="sticky-cta" id="stickyCta" aria-hidden="true">
     <div class="container">
-      <button class="main-button js-send-mail" type="button">Enviar mail a Diputados ahora</button>
+      <div class="cta-buttons">
+        <button
+          class="main-button js-send-mail"
+          type="button"
+          data-mail-target="favor"
+          aria-label="Abrir correo para escribir a Diputados que apoyan la reforma"
+        >
+          Mail a quienes votan a favor
+        </button>
+        <button
+          class="main-button main-button--outline js-send-mail"
+          type="button"
+          data-mail-target="duda"
+          aria-label="Abrir correo para escribir a Diputados indecisos"
+        >
+          Mail a quienes están en duda
+        </button>
+      </div>
     </div>
   </div>
 
@@ -517,37 +667,77 @@
   </footer>
 
   <script>
-  const BCC_LIST = "diputado1@hcdn.gob.ar, diputado2@hcdn.gob.ar, diputado3@hcdn.gob.ar";
-  const SUBJECT = "URGENTE: En Diputados se define la Ley de Glaciares — pedimos rechazo";
-  const BODY = `Estimados/as Diputados/as:
+  // Configuración de mails por grupo de Diputados.
+  // Reemplazá las listas de ejemplo por las reales cuando las tengas.
+  const MAIL_CONFIG = {
+    favor: {
+      bcc: "diputado1@hcdn.gob.ar, diputado2@hcdn.gob.ar, diputado3@hcdn.gob.ar",
+      subject: "Reforma de la Ley de Glaciares: exigimos que cambien su voto",
+      body: `Estimados/as Diputados/as:
 
-Les escribo con urgencia porque la reforma a la Ley de Glaciares ya tuvo media sanción en el Senado y ahora se define en la Cámara de Diputados.
+Les escribo porque he tomado conocimiento de que apoyarían la reforma a la Ley de Glaciares que ya tuvo media sanción en el Senado.
 
-Les solicito que RECHACEN cualquier modificación que reduzca la protección de los glaciares y del ambiente periglacial establecida por la Ley 26.639.
+Esa reforma implica un retroceso en la protección de los glaciares y del ambiente periglacial, y pone en riesgo reservas estratégicas de agua dulce para nuestras comunidades.
+
+Les exijo que revisen su posición y voten EN CONTRA de cualquier modificación que reduzca los estándares de protección establecidos por la Ley 26.639.
 
 Atentamente,
 [Tu nombre y apellido]
-[Localidad]`;
+[Localidad]`
+    },
+    duda: {
+      bcc: "diputado1@hcdn.gob.ar, diputado2@hcdn.gob.ar, diputado3@hcdn.gob.ar",
+      subject: "Reforma de la Ley de Glaciares: les pedimos que la rechacen",
+      body: `Estimados/as Diputados/as:
 
-  function openMail(e) {
+Les escribo porque, ante la votación de la reforma a la Ley de Glaciares que ya tuvo media sanción en el Senado, es clave la decisión que tomen en la Cámara de Diputados.
+
+La reforma implica debilitar la protección de los glaciares y del ambiente periglacial, que son reservas estratégicas de agua dulce y sostén de muchas comunidades.
+
+Les pido que voten EN CONTRA de cualquier modificación que reduzca los estándares de protección establecidos por la Ley 26.639 y que se pronuncien a favor de cuidar nuestros glaciares.
+
+Atentamente,
+[Tu nombre y apellido]
+[Localidad]`
+    }
+  };
+
+  function openMail(tipo, e) {
     if (e) e.preventDefault();
-    const cleanBcc = BCC_LIST.replace(/\s+/g, '');
+
+    const config = MAIL_CONFIG[tipo];
+    if (!config) {
+      console.error("Tipo de mail no reconocido:", tipo);
+      return;
+    }
+
+    const cleanBcc = (config.bcc || "").replace(/\s+/g, "");
     const params = [
       `bcc=${encodeURIComponent(cleanBcc)}`,
-      `subject=${encodeURIComponent(SUBJECT)}`,
-      `body=${encodeURIComponent(BODY)}`
-    ].join('&');
+      `subject=${encodeURIComponent(config.subject || "")}`,
+      `body=${encodeURIComponent(config.body || "")}`
+    ].join("&");
+
     const mailtoUrl = `mailto:?${params}`;
-    if (mailtoUrl.length > 2000) console.warn("Lista de mails muy larga. Algunos clientes podrían fallar.");
-    const a = document.createElement('a');
+    if (mailtoUrl.length > 2000) {
+      console.warn("La URL generada para el mail es muy larga. Algunos clientes podrían fallar.");
+    }
+
+    const a = document.createElement("a");
     a.href = mailtoUrl;
-    a.style.display = 'none';
+    a.style.display = "none";
     document.body.appendChild(a);
-    setTimeout(() => { a.click(); document.body.removeChild(a); }, 100);
+    setTimeout(() => {
+      a.click();
+      document.body.removeChild(a);
+    }, 100);
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".js-send-mail").forEach(btn => btn.onclick = openMail);
+    document.querySelectorAll(".js-send-mail").forEach(btn => {
+      const target = btn.getAttribute("data-mail-target") || "duda";
+      btn.onclick = (e) => openMail(target, e);
+    });
 
     const sticky = document.getElementById("stickyCta");
     const hero = document.getElementById("hero");
